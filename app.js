@@ -8,9 +8,9 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const flash = require('connect-flash');
 
-const indexRouter = require('./routes/index');
+const index = require('./routes/web/anonymous');
+const indexRouter = require('./routes/web');
 const apiRouter = require('./routes/api');
-const superAdminRouter = require('./routes/administrator');
 
 const app = express();
 
@@ -34,9 +34,9 @@ app.use(flash());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', index);
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
-app.use('/', superAdminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
