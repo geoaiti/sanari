@@ -7,6 +7,7 @@ const layout = 'layouts/anonymous/index';
 router.use(expressLayouts);
 router.use((req, res, next) => {
   res.locals.layout = layout;
+  req.app.set('layout' , true);
   next();
 });
 
@@ -15,6 +16,11 @@ router.get('/', function(req, res, next) {
     title : 'Sanari'
   };
   res.render('web/anonymous', data);
+});
+
+router.use((req, res, next) => {
+  req.app.set('layout' , false);
+  next();
 });
 
 module.exports = router;

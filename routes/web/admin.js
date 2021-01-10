@@ -7,14 +7,20 @@ const layout = 'layouts/admin/index';
 router.use(expressLayouts);
 router.use((req, res, next) => {
   res.locals.layout = layout;
+  req.app.set('layout' , true);
   next();
 });
 
 router.get('/', function(req, res, next) {
-    let data = {
-        title : 'Sanari'
-    };
-    res.render('web/admin', data);
+  let data = {
+    title : 'Admin'
+  };
+  res.render('web/admin', data);
+});
+
+router.use((req, res, next) => {
+  req.app.set('layout' , false);
+  next();
 });
 
 module.exports = router;

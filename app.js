@@ -34,6 +34,11 @@ app.use(flash());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((req, res, next) => {
+  res.locals.base_url = 'http://localhost:4000';
+  next();
+});
+
 app.use('/', index);
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
