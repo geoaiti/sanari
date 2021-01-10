@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
     let data = {
         title : 'Sanari'
     };
-    res.render('web/dashboard', data);
+    res.render('web/user', data);
 });
 
 module.exports = router;
