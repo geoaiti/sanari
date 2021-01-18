@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const expressLayouts = require('express-ejs-layouts');
 
-const layout = 'layouts/admin/index';
+const layout = 'layouts/web/admin/index';
 
 router.use(expressLayouts);
 router.use((req, res, next) => {

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const expressLayouts = require('express-ejs-layouts');
 
-const layout = 'layouts/anonymous/index';
+const layout = 'layouts/web/anonymous/index';
 
 router.use(expressLayouts);
 router.use((req, res, next) => {

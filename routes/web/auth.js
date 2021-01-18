@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const expressLayouts = require('express-ejs-layouts');
 
-const layout = 'layouts/auth/index';
+const layout = 'layouts/web/auth/index';
 
 router.use(expressLayouts);
 router.use((req, res, next) => {
@@ -11,11 +11,18 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get('/', function(req, res, next) {
+router.get('/login', function(req, res, next) {
   let data = {
     title : 'Sanari'
   };
-  res.render('web/auth', data);
+  res.render('web/auth/login', data);
+});
+
+router.get('/register', function(req, res, next) {
+  let data = {
+    title : 'Sanari'
+  };
+  res.render('web/auth/register', data);
 });
 
 router.use((req, res, next) => {

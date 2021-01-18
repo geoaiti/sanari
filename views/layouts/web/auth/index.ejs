@@ -1,0 +1,34 @@
+<% include ./../../partials/HeaderRoot  %>
+<!-- Loader -->
+<div id="preloader"><div id="status"><div class="spinner"></div></div></div>
+
+<!-- Begin page -->
+<div class="accountbg"></div>
+<div class="wrapper-page">
+
+    <div class="card">
+        <div class="card-body">
+
+            <div class="p-3">
+
+                <%- headForm %>
+
+                <form class="form-horizontal m-t-30" action="/">
+
+                    <%- formulir %>
+
+                    <%- uses %>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="m-t-40 text-center">
+        <%- account %>
+        <p class="text-white">©  <%= new Date().getFullYear() - 1; %> - <%= new Date().getFullYear(); %> Admiria. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+    </div>
+
+</div>
+
+<% include ./../../partials/FooterRoot  %>
