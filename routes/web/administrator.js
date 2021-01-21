@@ -11,11 +11,21 @@ router.use((req, res, next) => {
   next();
 });
 
+const db = require('./../../database/models');
+
 router.get('/', function(req, res, next) {
   let data = {
     title : 'Administrator'
   };
   res.render('web/administrator', data);
+});
+
+router.post('/', async (req, res) => {
+  
+  let account = await db.auth_account.findAll();
+  res.send({
+    account
+  })
 });
 
 router.use((req, res, next) => {
