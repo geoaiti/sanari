@@ -11,13 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      auth_menu.hasOne(models.auth_menu, {
+      auth_menu.hasMany(models.auth_menu, {
         foreignKey : 'parent_id'
       });
 
       auth_menu.belongsTo(models.auth_menu, {
         foreignKey : 'parent_id',
-        as : 'child'
+        // as : 'child'
       });
 
       auth_menu.belongsTo(models.auth_permission, {

@@ -11,19 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      auth_modul.hasOne(models.auth_permission, {
+      auth_modul.hasMany(models.auth_permission, {
         foreignKey : 'modul',
-        as : 'modul'
+        // as : 'modul'
       });
 
-      auth_modul.hasOne(models.auth_modul, {
+      auth_modul.hasMany(models.auth_modul, {
         foreignKey : 'parent_id',
-        as : 'parent'
+        // as : 'parent'
       });
 
       auth_modul.belongsTo(models.auth_modul, {
         foreignKey : 'parent_id',
-        as : 'sub_modul'
+        // as : 'sub_modul'
       });
     }
   };
@@ -32,6 +32,11 @@ module.exports = (sequelize, DataTypes) => {
     prefix: DataTypes.STRING,
     description: DataTypes.TEXT
   }, {
+    // defaultScope: {
+    //   include : [
+    //     'auth_modul',
+    //   ]
+    // },
     sequelize,
     paranoid: true,
     modelName: 'auth_modul',

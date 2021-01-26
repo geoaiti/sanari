@@ -13,16 +13,38 @@ router.use((req, res, next) => {
 
 const db = require('./../../database/models');
 
-router.get('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
   let data = {
     title : 'Administrator'
   };
   res.render('web/administrator', data);
 });
 
-router.post('/', async (req, res) => {
+router.get('/', async (req, res) => {
   
-  let account = await db.auth_account.findAll();
+  let account = await db.auth_account.findAll({
+    include : [
+      db.user,
+      {
+        model : db.auth_user_role,
+        include : [
+          {
+            model : db.auth_role,
+            include : [
+              db.auth_group,
+              {
+                model : db.auth_permission,
+                include : [
+                  db.auth_modul,
+                  db.auth_application
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  });
   res.send({
     account
   })

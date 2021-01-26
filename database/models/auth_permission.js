@@ -11,14 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      auth_permission.hasOne(models.auth_role, {
+      auth_permission.hasMany(models.auth_role, {
         foreignKey : 'permission',
-        as : 'role'
+        // as : 'role'
       });
 
-      auth_permission.hasOne(models.auth_menu, {
+      auth_permission.hasMany(models.auth_menu, {
         foreignKey : 'permission',
-        as : 'menu'
+        // as : 'menu'
       });
 
       auth_permission.belongsTo(models.auth_application, {

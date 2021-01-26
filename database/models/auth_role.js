@@ -11,9 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      auth_role.hasOne(models.auth_user_role, {
+      auth_role.hasMany(models.auth_user_role, {
         foreignKey : 'role',
-        as : 'user_role'
       });
 
       auth_role.belongsTo(models.auth_group, {

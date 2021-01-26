@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      auth_application.hasOne(models.auth_permission, {
+      auth_application.hasMany(models.auth_permission, {
         foreignKey : 'application',
-        as : 'application'
+        // as : 'application'
       });
     }
   };

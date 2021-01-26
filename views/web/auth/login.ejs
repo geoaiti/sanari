@@ -2,15 +2,21 @@
 <h4 class="font-18 m-b-5 text-center">Welcome Back !</h4>
 <p class="text-muted text-center">Sign in to continue to <%= app_name %>.</p>
 
+<% if(auth) { %>
+    <div class="alert alert-danger">
+        <%= auth %>
+    </div>
+<% } %>
+
 <%- contentFor('formulir') %>
 <div class="form-group">
     <label for="username">Username</label>
-    <input type="text" class="form-control" id="username" placeholder="Enter username or Email">
+    <input name="username" value="<%= username %>" type="text" class="form-control" id="username" placeholder="Enter username or Email" autofocus required>
 </div>
 
 <div class="form-group">
     <label for="userpassword">Password</label>
-    <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
+    <input type="password" class="form-control" id="userpassword" name="password" placeholder="Enter password" required>
 </div>
 
 <div class="form-group row m-t-20">
@@ -33,4 +39,4 @@
 </div> -->
 
 <%- contentFor('account') %>
-<p class="text-white">Don't have an account ? <a href="<%= base_url %>/auth/register" class="font-500 font-14 text-white font-secondary"> Signup Now </a> </p>
+<!-- <p class="text-white">Don't have an account ? <a href="<%= base_url %>/auth/register" class="font-500 font-14 text-white font-secondary"> Signup Now </a> </p> -->

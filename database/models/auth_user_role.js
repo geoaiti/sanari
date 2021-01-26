@@ -13,8 +13,9 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       auth_user_role.belongsTo(models.auth_account, {
         foreignKey : 'user',
-        as : 'account'
+        // as : 'account'
       });
+      // auth_user_role.belongsTo(models.auth_account);
 
       auth_user_role.belongsTo(models.auth_role, {
         foreignKey : 'role',
@@ -23,8 +24,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   auth_user_role.init({
-    user: DataTypes.INTEGER,
-    role: DataTypes.INTEGER
+    // user: DataTypes.INTEGER,
+    // role: DataTypes.INTEGER
   }, {
     sequelize,
     paranoid: true,

@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require("body-parser");
 const cors = require('cors');
-const flash = require('connect-flash');
+const flash = require('express-flash');
 
 const index = require('./routes/web/anonymous');
 const indexRouter = require('./routes/web');

@@ -13,9 +13,9 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       auth_account.belongsTo(models.user, {});
 
-      auth_account.hasOne(models.auth_user_role, {
+      auth_account.hasMany(models.auth_user_role, {
         foreignKey : 'user',
-        as : 'user_role'
+        // as : 'user_role'
       });
     }
   };
@@ -25,11 +25,6 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
     email: DataTypes.STRING
   }, {
-    defaultScope: {
-      include : [
-        'user'
-      ]
-    },
     sequelize,
     paranoid: true,
     modelName: 'auth_account',
