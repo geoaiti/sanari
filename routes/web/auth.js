@@ -16,7 +16,7 @@ router.use((req, res, next) => {
 });
 router.use((req, res, next) => {
   if (req.isAuthenticated()) {
-    return res.redirect('/');
+    return res.redirect('/administrator');
   }
   next();
 });
@@ -33,7 +33,7 @@ router.post('/login',
   passport.authenticate('local', { failureRedirect: '/auth/login', failureFlash: true }),
   (req, res, next) => {
     delete req.session.username;
-    res.redirect('/');
+    res.redirect('/administrator');
   }
 );
 

@@ -2,20 +2,19 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
-const db = require('./../../database/models');
 const config_passport = require('./../../config/passport-config');
+const db = require('./../../app/model');
 
 config_passport(
     passport,
     async (username) => 
-        (await db.auth_account.findAll({
+        (await db.account.getAll({
             where : {
                 username
             }
         }))
     ,
-    async (id) => 
-        (await db.auth_account.findByPk(id))
+    async (id) => (await db.account.getById(id))
 );
 
 router.use(passport.initialize());

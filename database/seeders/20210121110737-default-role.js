@@ -16,6 +16,7 @@ module.exports = {
         id: 1,
         group: 1,
         permission: 7,
+        is_default : 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -23,6 +24,7 @@ module.exports = {
         id: 2,
         group: 2,
         permission: 8,
+        is_default : 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -30,6 +32,7 @@ module.exports = {
         id: 3,
         group: 3,
         permission: 9,
+        is_default : 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -37,6 +40,31 @@ module.exports = {
         id: 4,
         group: 4,
         permission: 10,
+        is_default : 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 5,
+        group: 1,
+        permission: 11,
+        is_default : 0,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 6,
+        group: 2,
+        permission: 12,
+        is_default : 0,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 7,
+        group: 3,
+        permission: 13,
+        is_default : 0,
         createdAt: new Date(),
         updatedAt: new Date()
       },

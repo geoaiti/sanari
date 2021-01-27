@@ -48,6 +48,15 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        id: 5,
+        name: 'User Profile',
+        prefix: 'profile',
+        description: '',
+        parent_id : 0,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ]);
   },
 

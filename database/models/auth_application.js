@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       auth_application.hasMany(models.auth_permission, {
         foreignKey : 'application',
-        // as : 'application'
       });
     }
   };

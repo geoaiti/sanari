@@ -13,22 +13,18 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       auth_permission.hasMany(models.auth_role, {
         foreignKey : 'permission',
-        // as : 'role'
       });
 
       auth_permission.hasMany(models.auth_menu, {
         foreignKey : 'permission',
-        // as : 'menu'
       });
 
       auth_permission.belongsTo(models.auth_application, {
         foreignKey : 'application',
-        // as : 'application'
       });
 
       auth_permission.belongsTo(models.auth_modul, {
         foreignKey : 'modul',
-        // as : 'modul'
       });
     }
   };

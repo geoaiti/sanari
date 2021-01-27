@@ -15,21 +15,40 @@ module.exports = {
       {
         id: 1,
         user: 1,
-        role: 1,
+        group: 1,
+        is_default : 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 2,
         user: 2,
-        role: 2,
+        group: 2,
+        is_default : 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 3,
         user: 3,
-        role: 3,
+        group: 3,
+        is_default : 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 4,
+        user: 1,
+        group: 2,
+        is_default : 0,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 5,
+        user: 1,
+        group: 3,
+        is_default : 0,
         createdAt: new Date(),
         updatedAt: new Date()
       },

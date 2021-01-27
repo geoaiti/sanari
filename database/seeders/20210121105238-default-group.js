@@ -28,18 +28,18 @@ module.exports = {
       },
       {
         id: 3,
-        name: 'dashboard',
+        name: 'user',
         description: '',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 4,
-        name: 'user',
+        name: 'dashboard',
         description: '',
         createdAt: new Date(),
         updatedAt: new Date()
-      }
+      },
     ]);
   },
 

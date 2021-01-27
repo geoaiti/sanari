@@ -11,24 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      auth_role.hasMany(models.auth_user_role, {
-        foreignKey : 'role',
-      });
-
       auth_role.belongsTo(models.auth_group, {
         foreignKey : 'group',
-        // as : 'group'
       });
 
       auth_role.belongsTo(models.auth_permission, {
         foreignKey : 'permission',
-        // as : 'permission'
       });
     }
   };
   auth_role.init({
     group: DataTypes.INTEGER,
-    permission: DataTypes.INTEGER
+    permission: DataTypes.INTEGER,
+    is_default : DataTypes.INTEGER
   }, {
     sequelize,
     paranoid: true,

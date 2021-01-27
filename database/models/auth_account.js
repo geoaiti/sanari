@@ -15,12 +15,11 @@ module.exports = (sequelize, DataTypes) => {
 
       auth_account.hasMany(models.auth_user_role, {
         foreignKey : 'user',
-        // as : 'user_role'
       });
     }
   };
   auth_account.init({
-    // userId: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER,
     username: DataTypes.STRING,
     password: DataTypes.STRING,
     email: DataTypes.STRING

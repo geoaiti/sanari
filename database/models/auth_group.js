@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
       auth_group.hasMany(models.auth_role, {
         foreignKey : 'group',
       });
+
+      auth_group.hasMany(models.auth_user_role, {
+        foreignKey : 'group',
+      });
     }
   };
   auth_group.init({

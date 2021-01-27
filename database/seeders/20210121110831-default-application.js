@@ -38,16 +38,16 @@ module.exports = {
       },
       {
         id: 4,
-        name: 'Dashboard',
-        prefix: 'dashboard',
+        name: 'User',
+        prefix: 'user',
         description: '',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 5,
-        name: 'User',
-        prefix: 'user',
+        name: 'Dashboard',
+        prefix: 'dashboard',
         description: '',
         createdAt: new Date(),
         updatedAt: new Date()
