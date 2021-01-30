@@ -15,7 +15,7 @@ module.exports = {
       {
         id: 1,
         userId : 1,
-        username: 'developer',
+        username: 'dev',
         password: require('./../../config/helper').sha(`1-!P@ssw0rd`),
         email: `developer@${process.env.APP_NAME || 'sanari'}.id`,
         createdAt: new Date(),

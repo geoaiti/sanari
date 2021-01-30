@@ -16,7 +16,7 @@ module.exports = {
         id: 1,
         application: 1,
         modul: 1,
-        metode: 'get',
+        metode: 'GET',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -24,7 +24,7 @@ module.exports = {
         id: 2,
         application: 1,
         modul: 2,
-        metode: 'get',
+        metode: 'GET',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -32,7 +32,7 @@ module.exports = {
         id: 3,
         application: 1,
         modul: 2,
-        metode: 'post',
+        metode: 'POST',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -40,7 +40,7 @@ module.exports = {
         id: 4,
         application: 1,
         modul: 3,
-        metode: 'get',
+        metode: 'GET',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -48,7 +48,7 @@ module.exports = {
         id: 5,
         application: 1,
         modul: 3,
-        metode: 'post',
+        metode: 'POST',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -56,7 +56,7 @@ module.exports = {
         id: 6,
         application: 1,
         modul: 4,
-        metode: 'get',
+        metode: 'GET',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -64,7 +64,7 @@ module.exports = {
         id: 7,
         application: 2,
         modul: 1,
-        metode: 'get',
+        metode: 'GET',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -72,7 +72,7 @@ module.exports = {
         id: 8,
         application: 3,
         modul: 1,
-        metode: 'get',
+        metode: 'GET',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -80,7 +80,7 @@ module.exports = {
         id: 9,
         application: 4,
         modul: 1,
-        metode: 'get',
+        metode: 'GET',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -88,7 +88,7 @@ module.exports = {
         id: 10,
         application: 5,
         modul: 1,
-        metode: 'get',
+        metode: 'GET',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -96,7 +96,7 @@ module.exports = {
         id: 11,
         application: 2,
         modul: 5,
-        metode: 'get',
+        metode: 'GET',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -104,7 +104,7 @@ module.exports = {
         id: 12,
         application: 3,
         modul: 5,
-        metode: 'get',
+        metode: 'GET',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -112,7 +112,7 @@ module.exports = {
         id: 13,
         application: 4,
         modul: 5,
-        metode: 'get',
+        metode: 'GET',
         createdAt: new Date(),
         updatedAt: new Date()
       },

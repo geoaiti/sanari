@@ -4,6 +4,9 @@ const expressLayouts = require('express-ejs-layouts');
 
 const layout = 'layouts/web/user/index';
 
+const h = require('./../../config/helper');
+router.use(h.checkAuth);
+
 router.use(expressLayouts);
 router.use((req, res, next) => {
   res.locals.layout = layout;

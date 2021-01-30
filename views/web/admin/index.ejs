@@ -1,2 +1,6 @@
 <%- contentFor('body') %>
 <h1>/admin</h1>
+<a class="dropdown-item" href="<%= base_url %>/<%= user.active_role.auth_group.auth_role.permission.application.prefix %>/profile"><i class="dripicons-user text-muted"></i> Profile</a>
+<a href="/auth/logout">logout</a>
+<% console.log(user) %>
+<% console.log(user.active_role.auth_group.auth_role) %>

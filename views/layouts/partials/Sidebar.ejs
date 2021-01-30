@@ -20,17 +20,22 @@
             <!-- User-->
             <li class="list-inline-item dropdown notification-list">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
-                    aria-haspopup="false" aria-expanded="false">
+                aria-haspopup="false" aria-expanded="false">
+                    <span class="user-name"><%= user.user.name %></span><span> </span>
+                    <span class="user-status text-muted"><%= user.active_role.auth_group.name %></span>
                     <img src="<%= base_url %>/templates/assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                    <a class="dropdown-item" href="#"><i class="dripicons-user text-muted"></i> Profile</a>
+                    <a class="dropdown-item" href="<%= base_url %>/<%= user.active_role.auth_group.auth_role.permission.application.prefix %>/profile"><i class="dripicons-user text-muted"></i> Profile</a>
                     <!-- <a class="dropdown-item" href="#"><i class="dripicons-wallet text-muted"></i> My Wallet</a> -->
                     <a class="dropdown-item" href="#"><span class="badge badge-success pull-right m-t-5">5</span><i class="dripicons-gear text-muted"></i> Settings</a>
                     <!-- <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted"></i> Lock screen</a> -->
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted"></i> Logout</a>
+                    <a class="dropdown-item" href="<%= base_url %>/auth/logout"><i class="dripicons-exit text-muted"></i>Logout</a>
                 </div>
+                <% console.log(user); %>
+                
+<% console.log(user.active_role.auth_group.auth_role) %>
             </li>
         </ul>
 

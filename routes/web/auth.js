@@ -3,6 +3,8 @@ const router = express.Router();
 const passport = require('passport');
 const expressLayouts = require('express-ejs-layouts');
 
+const h = require('./../../config/helper');
+
 const layout = 'layouts/web/auth/index';
 
 router.use(expressLayouts);
@@ -14,14 +16,8 @@ router.use((req, res, next) => {
   req.app.set('layout' , true);
   next();
 });
-router.use((req, res, next) => {
-  if (req.isAuthenticated()) {
-    return res.redirect('/administrator');
-  }
-  next();
-});
 
-router.get('/login', (req, res, next) => {
+router.get('/login', h.checkNotAuth, (req, res, next) => {
   let data = {
     title : 'Sanari',
     action : 'auth/login',
@@ -30,14 +26,25 @@ router.get('/login', (req, res, next) => {
 });
 
 router.post('/login',
+  h.checkNotAuth,
   passport.authenticate('local', { failureRedirect: '/auth/login', failureFlash: true }),
   (req, res, next) => {
     delete req.session.username;
-    res.redirect('/administrator');
+    try {
+      h.goTo(req, res);
+    } catch (err) {
+      console.log(err);
+      res.redirect('/auth/login');
+    }
   }
 );
 
-router.get('/*', (req, res) => res.redirect('/auth/login'));
+router.get('/logout', (req, res) => {
+  req.logOut();
+  res.redirect('/auth/login');
+});
+
+router.get('/*', h.checkNotAuth, (req, res) => res.redirect('/auth/login'));
 router.use((req, res, next) => {
   req.app.set('layout' , false);
   next();

@@ -14,28 +14,28 @@ module.exports = {
     return queryInterface.bulkInsert('auth_groups', [
       {
         id: 1,
-        name: 'administrator',
+        name: 'Administrator',
         description: '',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 2,
-        name: 'admin',
+        name: 'Admin',
         description: '',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 3,
-        name: 'user',
+        name: 'User',
         description: '',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 4,
-        name: 'dashboard',
+        name: 'Dashboard',
         description: '',
         createdAt: new Date(),
         updatedAt: new Date()

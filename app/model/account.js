@@ -39,7 +39,39 @@ model.getById = async (id) => {
 };
 
 model.getAll = async (options) => {
-    return (await db.auth_account.findAll(options));
+    options.attributes = [
+        'id',
+        'username',
+        'password'
+    ],
+    options.include = [
+        {
+            model : db.user,
+            attributes : ['id', 'name', 'tanggal_lahir', 'gender', 'image']
+        },
+        {
+            model : db.auth_user_role,
+            attributes : ['id', 'is_default'],
+            include : [
+                {
+                    model : db.auth_group,
+                    attributes : ['id', 'name', 'description'],
+                    include : [
+                        {
+                            model : db.auth_role,
+                            attributes : ['id', 'is_default', 'permission']
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+    let account = await db.auth_account.findAll(options);
+    let data = [];
+    for (let i = 0; i < account.length; i++) {
+        data.push((await set(account[i])));
+    }
+    return data;
 };
 
 async function set(account) {
@@ -49,6 +81,10 @@ async function set(account) {
         user : account.user,
         auth_user_roles : [],
     };
+
+    if (account.password) {
+        data.password = account.password;
+    }
 
     let permissions = await db.auth_permission.findAll({
         attributes : ['id', 'metode', 'application', 'modul']
@@ -86,7 +122,12 @@ async function set(account) {
                 permission : {
                     id : permission.id,
                     metode : permission.metode,
-                    application,
+                    application : {
+                        id: application.id,
+                        name: application.name,
+                        prefix: application.prefix,
+                        description : application.description
+                    },
                     modul : {
                         id : modul.id,
                         name : modul.name,
@@ -97,10 +138,7 @@ async function set(account) {
                     menu : []
                 }
             };
-
-            data.auth_user_roles[i].auth_group.auth_roles.push(data.auth_user_roles[i].auth_group.auth_roles[j]);    
         }
-        data.auth_user_roles.push(data.auth_user_roles[i]);
     }
     return data;
 }

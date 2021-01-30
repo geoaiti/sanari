@@ -30,7 +30,7 @@ module.exports = {
       },
       {
         id: 3,
-        user: 3,
+        user: 4,
         group: 3,
         is_default : 1,
         createdAt: new Date(),
@@ -38,8 +38,8 @@ module.exports = {
       },
       {
         id: 4,
-        user: 1,
-        group: 2,
+        user: 2,
+        group: 3,
         is_default : 0,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -47,7 +47,7 @@ module.exports = {
       {
         id: 5,
         user: 1,
-        group: 3,
+        group: 2,
         is_default : 0,
         createdAt: new Date(),
         updatedAt: new Date()
