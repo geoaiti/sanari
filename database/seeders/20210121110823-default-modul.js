@@ -50,7 +50,7 @@ module.exports = {
       },
       {
         id: 5,
-        name: 'User Profile',
+        name: 'Profile',
         prefix: 'profile',
         description: '',
         parent_id : 0,

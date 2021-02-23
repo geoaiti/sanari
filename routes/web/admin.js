@@ -9,30 +9,30 @@ router.use(h.checkAuth);
 
 router.use(expressLayouts);
 router.use((req, res, next) => {
+  res.locals.base_url_template = res.locals.base_url + "/templates/metrika/html";
   res.locals.user = req.user;
   res.locals.layout = layout;
   req.app.set('layout' , true);
   next();
 });
 
-router.get('/', function(req, res, next) {
-    let data = {
-      title : 'Admin'
-    };
-    res.render('web/admin', data, (err, html) => {
+router.get('/', async (req, res) => {
+  let data = {
+    title : 'Admin'
+  };
+  res.render('web/admin', data, (err, html) => {
+    if (err) {
       console.log(err);
-      res.send(html)
-    });
+      return res.send(err);
+    }
+    return res.send(html);
+  });
 });
 
-router.get('/profile', function(req, res, next) {
-    let data = {
-      title : 'Admin'
-    };
-    res.render('web/admin', data, (err, html) => {
-      console.log(err);
-      res.send(html)
-    });
+router.get('/profile', async (req, res) => {
+  res.send({
+    user : req.user
+  });
 });
 
 router.use((req, res, next) => {

@@ -45,13 +45,13 @@ router.post('/login',
   }
 );
 
-router.get('/register', h.checkNotAuth, (req, res, next) => {
-  let data = {
-    title : 'Register',
-    action : 'auth/register',
-  };
-  res.render('web/auth/register', data);
-});
+// router.get('/register', h.checkNotAuth, (req, res, next) => {
+//   let data = {
+//     title : 'Register',
+//     action : 'auth/register',
+//   };
+//   res.render('web/auth/register', data);
+// });
 
 router.get('/logout', (req, res) => {
   req.logOut();

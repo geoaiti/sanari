@@ -38,7 +38,16 @@ module.exports = {
         email: `dashboard@${process.env.APP_NAME || 'sanari'}.id`,
         createdAt: new Date(),
         updatedAt: new Date()
-      }
+      },
+      {
+        id: 4,
+        userId : 4,
+        username: 'user',
+        password: require('./../../config/helper').sha(`4-!P@ssw0rd`),
+        email: `user@${process.env.APP_NAME || 'sanari'}.id`,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ]);
   },
 

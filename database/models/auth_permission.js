@@ -31,7 +31,8 @@ module.exports = (sequelize, DataTypes) => {
   auth_permission.init({
     application: DataTypes.INTEGER,
     modul: DataTypes.INTEGER,
-    metode: DataTypes.STRING
+    metode: DataTypes.STRING,
+    is_auth : DataTypes.INTEGER
   }, {
     sequelize,
     paranoid: true,

@@ -36,6 +36,14 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        id: 4,
+        name: 'User',
+        tanggal_lahir: new Date(),
+        gender: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ]);
   },
 

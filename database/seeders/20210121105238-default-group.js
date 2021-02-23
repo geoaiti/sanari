@@ -28,14 +28,14 @@ module.exports = {
       },
       {
         id: 3,
-        name: 'User',
+        name: 'Dashboard',
         description: '',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: 4,
-        name: 'Dashboard',
+        name: 'User',
         description: '',
         createdAt: new Date(),
         updatedAt: new Date()

@@ -17,6 +17,7 @@ module.exports = {
         application: 1,
         modul: 1,
         metode: 'GET',
+        is_auth: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -25,6 +26,7 @@ module.exports = {
         application: 1,
         modul: 2,
         metode: 'GET',
+        is_auth: 0,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -33,6 +35,7 @@ module.exports = {
         application: 1,
         modul: 2,
         metode: 'POST',
+        is_auth: 0,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -41,6 +44,7 @@ module.exports = {
         application: 1,
         modul: 3,
         metode: 'GET',
+        is_auth: 0,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -49,6 +53,7 @@ module.exports = {
         application: 1,
         modul: 3,
         metode: 'POST',
+        is_auth: 0,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -57,6 +62,7 @@ module.exports = {
         application: 1,
         modul: 4,
         metode: 'GET',
+        is_auth: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -65,6 +71,7 @@ module.exports = {
         application: 2,
         modul: 1,
         metode: 'GET',
+        is_auth: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -73,6 +80,7 @@ module.exports = {
         application: 3,
         modul: 1,
         metode: 'GET',
+        is_auth: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -81,6 +89,7 @@ module.exports = {
         application: 4,
         modul: 1,
         metode: 'GET',
+        is_auth: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -89,6 +98,7 @@ module.exports = {
         application: 5,
         modul: 1,
         metode: 'GET',
+        is_auth: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -97,6 +107,7 @@ module.exports = {
         application: 2,
         modul: 5,
         metode: 'GET',
+        is_auth: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -105,6 +116,7 @@ module.exports = {
         application: 3,
         modul: 5,
         metode: 'GET',
+        is_auth: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -113,6 +125,16 @@ module.exports = {
         application: 4,
         modul: 5,
         metode: 'GET',
+        is_auth: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 14,
+        application: 5,
+        modul: 5,
+        metode: 'GET',
+        is_auth: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
