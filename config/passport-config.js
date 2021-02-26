@@ -5,16 +5,15 @@ const LocalStrategy = require('passport-local').Strategy
 function initialize(passport, getUserByUsername, getUserById) {
   const authenticateUser = async (username = '', password = '', done) => {
     const user = await getUserByUsername(username);
-    console.log(user);
     if (!user.length) {
-        console.log('Wrong username');
-        return done(null, false, { message: "No User With That Username"});
+      console.log('Wrong username');
+      return done(null, false, { message: "No User With That Username"});
     }
 
     for (let i = 0; i < user.length; i++) {
-        if (helper.compare(password, user[i])) {
-            return done(null, user[i]);
-        }
+      if (helper.compare(password, user[i])) {
+          return done(null, await getUserById(user[i].id));
+      }
     }
     console.log('Wrong password');
     return done(null, false, { message: "Password Incorrect" });

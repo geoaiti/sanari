@@ -1,0 +1,29 @@
+<ul class="metismenu left-sidenav-menu slimscroll">
+    <% let menu = user.menus %>
+    <% for( let i = 0; i < menu.length; i++ ) { %>
+    <li class="menu-label"><%= menu[i].name %></li>
+        <% for( let j = 0; j < menu[i].menus.length; j++ ) { %>
+        <li class="leftbar-menu-item">
+            <a href="javascript: void(0);" class="menu-link">
+                <%- menu[i].menus[j].icon %>
+                <span><%= menu[i].menus[j].name %></span>
+                <span class="menu-arrow">
+                    <i class="mdi mdi-chevron-right"></i>
+                </span>
+            </a>
+            <ul class="nav-second-level" aria-expanded="false">
+                <% for( let k = 0; k < menu[i].menus[j].menus.length; k++ ) { %>
+                    <li class="nav-item">
+                        <% let application_prefix = menu[i].menus[j].menus[k].auth_permission.application.prefix %>
+                        <% let modul_prefix = menu[i].menus[j].menus[k].auth_permission.modul.prefix %>
+                        <a class="nav-link" href="<%= base_url %>/<%= application_prefix %><%= modul_prefix == '' ? '' : `/${modul_prefix}` %>">
+                            <%- menu[i].menus[j].menus[k].icon %>
+                            <%= menu[i].menus[j].menus[k].name %>
+                        </a>
+                    </li>
+                <% } %>
+            </ul>
+        </li>
+        <% } %>
+    <% } %>
+</ul>

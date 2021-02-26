@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {
   res.locals.base_url = process.env.BASE_URL || 'http://localhost:4000';
   res.locals.app_name = process.env.APP_NAME || 'Sanari';
-  res.locals.team = 'Modernesia';
+  res.locals.team = process.env.TEAM || 'Modernesia';
   next();
 });
 

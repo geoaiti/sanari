@@ -1,0 +1,54 @@
+<!-- Navbar -->
+<nav class="navbar-custom">    
+    <ul class="list-unstyled topbar-nav float-right mb-0">
+        <li class="dropdown">
+            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
+                aria-haspopup="false" aria-expanded="false">
+                <img src="<%= base_url_template %>/assets/images/users/user-9.jpg" alt="profile-user" class="rounded-circle" /> 
+                <span class="ml-1 nav-user-name hidden-sm"><%= user.user.name %><i class="mdi mdi-chevron-down"></i></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="<%= base_url %>/<%= user.active_role.auth_group.auth_role.permission.application.prefix %>/profile"><i class="dripicons-user text-muted mr-2"></i>Profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="<%= base_url %>/auth/logout"><i class="dripicons-exit text-muted mr-2"></i>Logout</a>
+            </div>
+        </li>
+    </ul>
+
+    <ul class="list-unstyled topbar-nav mb-0">  
+        <li>
+            <a href="<%= base_url %>/<%= user.active_role.auth_group.auth_role.permission.application.prefix %>">
+                <span class="responsive-logo">
+                    <img src="<%= base_url_template %>/assets/images/logo-sm.png" alt="logo-small" class="logo-sm align-self-center" height="34">
+                </span>
+            </a>
+        </li>
+        <li>
+            <button class="button-menu-mobile nav-link">
+                <i data-feather="menu" class="align-self-center"></i>
+            </button>
+        </li>
+        <li class="dropdown">
+            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
+                aria-haspopup="false" aria-expanded="false">                            
+                <span class="ml-1 p-2 bg-soft-classic nav-user-name hidden-sm rounded">System<i class="mdi mdi-chevron-down"></i></span>
+            </a>
+            <div class="dropdown-menu dropdown-lg dropdown-menu-left p-0">
+                <div class="row no-gutters">
+                    <div class="col-md-12">
+                        <div class="divider-custom mb-0">
+                            <div class="divider-text bg-light">System</div>
+                        </div>
+                        <div>
+                            <% for( let i = 0; i < user.auth_user_roles.length; i++ ) { %>
+                                <a class="dropdown-item mb-2" href="<%= base_url %>/<%= user.auth_user_roles[i].auth_group.auth_roles.find(x => x.is_default == 1).permission.application.prefix %>">
+                                    <%= user.auth_user_roles[i].auth_group.name %>
+                                </a>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</nav>

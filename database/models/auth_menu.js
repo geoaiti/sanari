@@ -26,10 +26,16 @@ module.exports = (sequelize, DataTypes) => {
   };
   auth_menu.init({
     name: DataTypes.STRING,
-    icon: DataTypes.STRING,
+    icon: DataTypes.TEXT,
     parent_id: DataTypes.INTEGER,
-    permission: DataTypes.INTEGER
+    permission: DataTypes.INTEGER,
+    sorter : DataTypes.INTEGER
   }, {
+    defaultScope : {
+      order : [
+        ['sorter', 'ASC']
+      ]
+    },
     sequelize,
     paranoid: true,
     modelName: 'auth_menu',

@@ -30,8 +30,18 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/profile', async (req, res) => {
-  res.send({
-    user : req.user
+  // res.send({
+  //   user : req.user.active_role,
+  // });
+  let data = {
+    title : 'Profile'
+  };
+  res.render('web/administrator/profile', data, (err, html) => {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+    return res.send(html);
   });
 });
 

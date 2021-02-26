@@ -13,13 +13,17 @@ module.exports = {
       },
       icon: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       parent_id: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
       permission: {
+        allowNull: true,
+        type: Sequelize.INTEGER
+      },
+      sorter: {
         allowNull: false,
         type: Sequelize.INTEGER
       },

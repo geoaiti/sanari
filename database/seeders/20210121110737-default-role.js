@@ -71,7 +71,7 @@ module.exports = {
       {
         id: 8,
         group: 4,
-        permission: 13,
+        permission: 14,
         is_default : 0,
         createdAt: new Date(),
         updatedAt: new Date()

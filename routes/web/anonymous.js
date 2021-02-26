@@ -12,14 +12,8 @@ router.use((req, res, next) => {
 });
 
 router.get('/', function(req, res, next) {
-  let text = "sanjari";
-  try {
-    console.log(text.includes("san"));
-  } catch (err) {
-    console.log(err);
-  }
   let data = {
-    title : 'Sanari'
+    title : 'Anonymous'
   };
   res.render('web/anonymous', data, (err, html) => {
     console.log(err);

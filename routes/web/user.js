@@ -18,7 +18,7 @@ router.use((req, res, next) => {
 
 router.get('/', async (req, res) => {
   let data = {
-    title : 'Sanari'
+    title : 'User'
   };
   res.render('web/user', data, (err, html) => {
     if (err) {
@@ -30,8 +30,15 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/profile', async (req, res) => {
-  res.send({
-    user : req.user
+  let data = {
+    title : 'Profile'
+  };
+  res.render('web/user/profile', data, (err, html) => {
+    if (err) {
+      console.log(err);
+      return res.send(err);
+    }
+    return res.send(html);
   });
 });
 
