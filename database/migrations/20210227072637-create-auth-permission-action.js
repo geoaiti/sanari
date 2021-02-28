@@ -1,29 +1,24 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('auth_moduls', {
+    await queryInterface.createTable('auth_permission_actions', {
       id: {
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        allowNull : false,
-        type: Sequelize.STRING
+      permission: {
+        type: Sequelize.INTEGER
       },
-      prefix: {
-        allowNull : false,
-        type: Sequelize.STRING
+      action: {
+        type: Sequelize.INTEGER
       },
-      description: {
-        allowNull : false,
+      data_argument: {
         type: Sequelize.TEXT
       },
-      parent_id: {
-        type : Sequelize.INTEGER
-      },
-      generation: {
-        type : Sequelize.INTEGER
+      url_pattern: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -32,13 +27,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      },
-      deletedAt: {
-        type: Sequelize.DATE
       }
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('auth_moduls');
+    await queryInterface.dropTable('auth_permission_actions');
   }
 };

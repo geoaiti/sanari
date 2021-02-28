@@ -61,29 +61,29 @@ class Account {
     set auth_user_roles(values){
         for (let i = 0; i < values.length; i++) {
             let user_role = new (require('./User_role'))(values[i]);
-            // await user_role.init();
             this.#auth_user_roles.push(user_role);
         }
     }
 
-    async setMenu(value) {
-        // console.log(value);
+    set menus(value) {
         let menu = [];
         let root = value.filter(x => x.parent_id == 0);
         for (let i = 0; i < root.length; i++) {
             let m = new (require('./Menu'))(root[i]);
-            if (root[i].auth_permission) {
+            if (root[i].auth_permission_action) {
                 m.is_active = root[i].is_active;
-                m.auth_permission = root[i].auth_permission;
-                if (root[i].auth_permission.auth_application) {
-                    m.auth_permission.application = root[i].auth_permission.auth_application;
+                m.permission_action = root[i].auth_permission_action;
+                m.permission_action.permission = root[i].auth_permission_action.auth_permission;
+                m.permission_action.action = root[i].auth_permission_action.action;
+                if (root[i].auth_permission_action.auth_permission.application) {
+                    m.permission_action.permission.application = root[i].auth_permission_action.auth_permission.auth_application;
                 }
-                if (root[i].auth_permission.auth_modul) {
-                    m.auth_permission.modul = root[i].auth_permission.auth_modul;
+                if (root[i].auth_permission_action.auth_permission.auth_modul) {
+                    m.permission_action.permission.modul = root[i].auth_permission_action.auth_permission.auth_modul;
                 }
             }
             let m_child = value.filter(x => x.parent_id == root[i].id);
-            m.menus = await this.getMenu(m_child, value);
+            m.menus = this.getMenu(m_child, value);
             menu.push(m);
         }
         this.#menus = [];
@@ -91,22 +91,24 @@ class Account {
     }
     
     // function private
-    async getMenu(menus, all){
+    getMenu(menus, all){
         let menu = [];
         for (let i = 0; i < menus.length; i++) {
             let m = new (require('./Menu'))(menus[i]);
-            if (menus[i].auth_permission) {
+            if (menus[i].auth_permission_action) {
                 m.is_active = menus[i].is_active;
-                m.auth_permission = menus[i].auth_permission;
-                if (menus[i].auth_permission.auth_application) {
-                    m.auth_permission.application = menus[i].auth_permission.auth_application;
+                m.permission_action = menus[i].auth_permission_action;
+                m.permission_action.permission = menus[i].auth_permission_action.auth_permission;
+                m.permission_action.action = menus[i].auth_permission_action.action;
+                if (menus[i].auth_permission_action.auth_permission.application) {
+                    m.permission_action.permission.application = menus[i].auth_permission_action.auth_permission.auth_application;
                 }
-                if (menus[i].auth_permission.auth_modul) {
-                    m.auth_permission.modul = menus[i].auth_permission.auth_modul;
+                if (menus[i].auth_permission_action.auth_permission.auth_modul) {
+                    m.permission_action.permission.modul = menus[i].auth_permission_action.auth_permission.auth_modul;
                 }
             }
             let m_child = all.filter(x => x.parent_id == menus[i].id);
-            m.menus = await this.getMenu(m_child, all);
+            m.menus = this.getMenu(m_child, all);
             menu.push(m);
         }
         return menu;

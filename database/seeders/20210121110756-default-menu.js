@@ -141,6 +141,16 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        id: 13,
+        name: 'Logout',
+        icon: `<i class="ti-control-record"></i>`,
+        parent_id: 8,
+        permission: 6,
+        sorter: 13,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ]);
   },
 

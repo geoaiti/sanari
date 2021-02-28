@@ -18,6 +18,7 @@ module.exports = {
         prefix: '',
         description: '',
         parent_id : 0,
+        generation : 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -27,6 +28,7 @@ module.exports = {
         prefix: 'login',
         description: '',
         parent_id : 0,
+        generation : 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -36,6 +38,7 @@ module.exports = {
         prefix: 'register',
         description: '',
         parent_id : 0,
+        generation : 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -45,6 +48,7 @@ module.exports = {
         prefix: 'logout',
         description: '',
         parent_id : 0,
+        generation : 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -54,6 +58,7 @@ module.exports = {
         prefix: 'profile',
         description: '',
         parent_id : 0,
+        generation : 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },

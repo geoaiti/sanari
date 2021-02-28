@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey : 'parent_id',
       });
 
-      auth_menu.belongsTo(models.auth_permission, {
+      auth_menu.belongsTo(models.auth_permission_action, {
         foreignKey : 'permission',
       });
     }

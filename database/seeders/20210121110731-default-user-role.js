@@ -62,7 +62,7 @@ module.exports = {
       },
       {
         id: 7,
-        user: 2,
+        user: 1,
         group: 3,
         is_default : 0,
         createdAt: new Date(),
@@ -71,7 +71,23 @@ module.exports = {
       {
         id: 8,
         user: 2,
+        group: 3,
+        is_default : 0,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 9,
+        user: 2,
         group: 4,
+        is_default : 0,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 10,
+        user: 4,
+        group: 3,
         is_default : 0,
         createdAt: new Date(),
         updatedAt: new Date()

@@ -4,6 +4,7 @@ const passport = require('passport');
 const expressLayouts = require('express-ejs-layouts');
 
 const h = require('./../../config/helper');
+const db = require('./../../database/models');
 
 const layout = 'layouts/web/auth/index';
 
@@ -34,10 +35,10 @@ router.get('/login', h.checkNotAuth, (req, res, next) => {
 router.post('/login',
   h.checkNotAuth,
   passport.authenticate('local', { failureRedirect: '/auth/login', failureFlash: true }),
-  (req, res, next) => {
+  async (req, res, next) => {
     delete req.session.username;
     try {
-      h.goTo(req, res);
+      await h.goTo(req, res);
     } catch (err) {
       console.log(err);
       res.redirect('/auth/login');

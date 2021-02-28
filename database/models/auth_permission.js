@@ -11,11 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      auth_permission.hasMany(models.auth_role, {
-        foreignKey : 'permission',
-      });
-
-      auth_permission.hasMany(models.auth_menu, {
+      auth_permission.hasMany(models.auth_permission_action, {
         foreignKey : 'permission',
       });
 
@@ -32,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     application: DataTypes.INTEGER,
     modul: DataTypes.INTEGER,
     metode: DataTypes.STRING,
-    is_auth : DataTypes.INTEGER
+    title : DataTypes.STRING
   }, {
     sequelize,
     paranoid: true,

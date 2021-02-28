@@ -4,7 +4,7 @@ class Permission {
 
     #id = null;
     #metode = null;
-    #is_auth = null;
+    #title = null;
 
     #application = {};
     #modul = {};
@@ -12,7 +12,7 @@ class Permission {
     constructor(value){
         this.#id = value.id;
         this.#metode = value.metode;
-        this.#is_auth = value.is_auth;
+        this.#title = value.title;
     }
 
     // getter
@@ -24,8 +24,8 @@ class Permission {
         return this.#metode;
     }
 
-    get is_auth(){
-        return this.#is_auth;
+    get title(){
+        return this.#title;
     }
 
     get application(){

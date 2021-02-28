@@ -27,7 +27,8 @@ module.exports = (sequelize, DataTypes) => {
   auth_modul.init({
     name: DataTypes.STRING,
     prefix: DataTypes.STRING,
-    description: DataTypes.TEXT
+    description: DataTypes.TEXT,
+    generation : DataTypes.INTEGER
   }, {
     sequelize,
     paranoid: true,

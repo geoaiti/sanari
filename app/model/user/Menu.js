@@ -9,7 +9,7 @@ class Menu {
     #permission = null;
 
     #menus = [];
-    #auth_permission = {};
+    #permission_action = {};
     #is_active = false;
 
     constructor(value){
@@ -41,8 +41,8 @@ class Menu {
     get menus(){
         return this.#menus;
     }
-    get auth_permission(){
-        return this.#auth_permission;
+    get permission_action(){
+        return this.#permission_action;
     }
     get is_active(){
         return this.#is_active;
@@ -52,11 +52,11 @@ class Menu {
     set menus(values){
         this.#menus = values;
     }
-    set auth_permission(value){
-        this.#auth_permission = new (require('./Permission'))(value);
+    set permission_action(value){
+        this.#permission_action = new (require('./Permission_action'))(value);
     }
     set is_active(value){
-        this.#is_active = value;
+        this.#is_active = value ? value : false;
     }
 }
 

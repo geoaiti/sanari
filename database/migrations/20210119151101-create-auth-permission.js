@@ -19,10 +19,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      is_auth : {
+      title : {
         allowNull : false,
-        type : Sequelize.INTEGER,
-        defaultValue : 1
+        type : Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,

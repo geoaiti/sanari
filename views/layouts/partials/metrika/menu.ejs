@@ -14,9 +14,7 @@
             <ul class="nav-second-level" aria-expanded="false">
                 <% for( let k = 0; k < menu[i].menus[j].menus.length; k++ ) { %>
                     <li class="nav-item">
-                        <% let application_prefix = menu[i].menus[j].menus[k].auth_permission.application.prefix %>
-                        <% let modul_prefix = menu[i].menus[j].menus[k].auth_permission.modul.prefix %>
-                        <a class="nav-link" href="<%= base_url %>/<%= application_prefix %><%= modul_prefix == '' ? '' : `/${modul_prefix}` %>">
+                        <a class="nav-link" href="<%= menu[i].menus[j].menus[k].permission_action.url_pattern %>">
                             <%- menu[i].menus[j].menus[k].icon %>
                             <%= menu[i].menus[j].menus[k].name %>
                         </a>

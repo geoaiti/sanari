@@ -8,7 +8,7 @@
                 <span class="ml-1 nav-user-name hidden-sm"><%= user.user.name %><i class="mdi mdi-chevron-down"></i></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="<%= base_url %>/<%= user.active_role.auth_group.auth_role.permission.application.prefix %>/profile"><i class="dripicons-user text-muted mr-2"></i>Profile</a>
+                <a class="dropdown-item" href="<%= base_url %>/<%= user.active_role.auth_group.auth_role.permission_action.permission.application.prefix %>/profile"><i class="dripicons-user text-muted mr-2"></i>Profile</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="<%= base_url %>/auth/logout"><i class="dripicons-exit text-muted mr-2"></i>Logout</a>
             </div>
@@ -17,7 +17,7 @@
 
     <ul class="list-unstyled topbar-nav mb-0">  
         <li>
-            <a href="<%= base_url %>/<%= user.active_role.auth_group.auth_role.permission.application.prefix %>">
+            <a href="<%= base_url %>/<%= user.active_role.auth_group.auth_role.permission_action.permission.application.prefix %>">
                 <span class="responsive-logo">
                     <img src="<%= base_url_template %>/assets/images/logo-sm.png" alt="logo-small" class="logo-sm align-self-center" height="34">
                 </span>
@@ -41,7 +41,7 @@
                         </div>
                         <div>
                             <% for( let i = 0; i < user.auth_user_roles.length; i++ ) { %>
-                                <a class="dropdown-item mb-2" href="<%= base_url %>/<%= user.auth_user_roles[i].auth_group.auth_roles.find(x => x.is_default == 1).permission.application.prefix %>">
+                                <a class="dropdown-item mb-2" href="<%= base_url %>/<%= user.auth_user_roles[i].auth_group.auth_roles.find(x => x.is_default == 1).permission_action.permission.application.prefix %>">
                                     <%= user.auth_user_roles[i].auth_group.name %>
                                 </a>
                             <% } %>

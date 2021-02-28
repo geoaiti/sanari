@@ -9,10 +9,6 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const flash = require('express-flash');
 
-const index = require('./routes/web/anonymous');
-const indexRouter = require('./routes/web');
-const apiRouter = require('./routes/api');
-
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -42,9 +38,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', index);
-app.use('/', indexRouter);
-app.use('/api', apiRouter);
+app.use('/api', require('./routes/api'));
+app.use('/', require('./routes/index'));
+app.use('/', require('./routes/web'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

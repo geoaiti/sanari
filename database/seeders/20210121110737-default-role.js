@@ -76,6 +76,38 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        id: 9,
+        group: 1,
+        permission: 6,
+        is_default : 0,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 10,
+        group: 2,
+        permission: 6,
+        is_default : 0,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 11,
+        group: 3,
+        permission: 6,
+        is_default : 0,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 12,
+        group: 4,
+        permission: 6,
+        is_default : 0,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ]);
   },
 

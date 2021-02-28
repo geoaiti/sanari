@@ -4,7 +4,7 @@ class Role {
     #id = null;
     #is_default = null;
 
-    #permission = {};
+    #permission_action = {};
 
     constructor(value){
         this.#id = value.id;
@@ -21,13 +21,13 @@ class Role {
         return this.#is_default;
     }
 
-    get permission(){
-        return this.#permission;
+    get permission_action(){
+        return this.#permission_action;
     }
 
     // setter
-    set permission(value){
-        this.#permission = new (require('./Permission'))(value);
+    set permission_action(value){
+        this.#permission_action = new (require('./Permission_action'))(value);
     }
 
 };

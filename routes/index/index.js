@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send({});
+router.get('/', async (req, res, next) => {
+    res.send(res.locals);
 });
 
 module.exports = router;

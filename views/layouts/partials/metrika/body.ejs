@@ -3,7 +3,7 @@
         <div class="left-sidenav">           
             <!-- LOGO -->
             <div class="topbar-left">
-                <a href="<%= base_url %>/<%= user.active_role.auth_group.auth_role.permission.application.prefix %>" class="logo">
+                <a href="<%= base_url %>/<%= user.active_role.auth_group.auth_role.permission_action.permission.application.prefix %>" class="logo">
                     <span>
                         <img src="<%= base_url_template %>/assets/images/logo-sm.png" alt="logo-small" class="logo-sm">
                     </span>
@@ -42,10 +42,10 @@
                             <div class="page-title-box">
                                 <div class="float-right">
                                     <ol class="breadcrumb">
-                                        <% let application_prefix = user.active_role.auth_group.auth_role.permission.application.prefix; %>
-                                        <% let application_name = user.active_role.auth_group.auth_role.permission.application.name; %>
-                                        <% let modul_prefix = user.active_role.auth_group.auth_role.permission.modul.prefix; %>
-                                        <% let modul_name = user.active_role.auth_group.auth_role.permission.modul.name; %>
+                                        <% let application_prefix = user.active_role.auth_group.auth_role.permission_action.permission.application.prefix; %>
+                                        <% let application_name = user.active_role.auth_group.auth_role.permission_action.permission.application.name; %>
+                                        <% let modul_prefix = user.active_role.auth_group.auth_role.permission_action.permission.modul.prefix; %>
+                                        <% let modul_name = user.active_role.auth_group.auth_role.permission_action.permission.modul.name; %>
                                         <li class="breadcrumb-item"><a href="<%= base_url %>"><%= app_name %></a></li>
                                         <li class="breadcrumb-item"><a href="<%= base_url %>/<%= application_prefix %>"><%= application_name %></a></li>
                                         <li class="breadcrumb-item"><a href="<%= base_url %>/<%= application_prefix %><%= modul_prefix == '' ? '' : `/${modul_prefix}`  %>"><%= modul_name %></a></li>
